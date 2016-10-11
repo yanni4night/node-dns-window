@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron .",
     "build": "panto",
+    "prepublish": "npm run build && electron-packager .",
     "test": "eslint --ext .jsx,.js src"
   },
   "keywords": [
