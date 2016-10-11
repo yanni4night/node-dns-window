@@ -12,6 +12,23 @@
 'use strict';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
+import {Provider, connect} from 'react-redux';
+import * as reducers from './reducers/';
+import * as actionCreators from './action-creators';
+import thunk from 'redux-thunk';
+import Page from './coms/page.jsx';
 
+const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
 
-ReactDOM.render(<h1>Hello, DNS</h1>, document.querySelector('#react-root'));
+function mapStateToProps(state) {
+    return {servers: state.servers};
+}
+
+function mapDispatchToProps(dispatch) {
+    return bindActionCreators(actionCreators, dispatch);
+}
+
+const App = connect(mapStateToProps, mapDispatchToProps)(Page);
+
+ReactDOM.render(<Provider store={store}><App/></Provider>, document.querySelector('#react-root'));
