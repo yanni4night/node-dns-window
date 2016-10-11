@@ -10,10 +10,10 @@
  * @since 0.1.0
  */
 'use strict';
-import * as ActionTypes from '../action-types';
+import * as T from '../action-types';
 
 export function servers(state = [], action) {
-    if (ActionTypes.ACTION_UPDATE_SERVERS === action.type) {
+    if (T.ACTION_UPDATE_SERVERS === action.type) {
         return [...action.payload];
     } else {
         return state;

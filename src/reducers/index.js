@@ -11,3 +11,5 @@
   */
 'use strict';
 export * from './servers';
+export * from './lookup';
+export * from './reverse';

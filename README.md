@@ -3,7 +3,7 @@
 
 DNS tool, built by electron.
 
-![screenshot](http://ww2.sinaimg.cn/large/801b780ajw1f8o6aujbq4j208c0goq3d.jpg)
+![screenshot](http://ww4.sinaimg.cn/large/801b780ajw1f8oegzzb23j208c0got9a.jpg)
 
 ```sh
 npm i panto-cli -g

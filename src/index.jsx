@@ -22,7 +22,7 @@ import Page from './coms/page.jsx';
 const store = createStore(combineReducers(reducers), applyMiddleware(thunk));
 
 function mapStateToProps(state) {
-    return {servers: state.servers};
+    return state;
 }
 
 function mapDispatchToProps(dispatch) {

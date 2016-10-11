@@ -11,42 +11,17 @@
   */
 'use strict';
 import React from 'react';
+import List from './list.jsx';
+import Resolver from './resolve.jsx';
+import Reverse from './reverse.jsx';
 
 class Page extends React.Component {
     constructor(props) {
         super(props);
         this.displayName = 'Page';
     }
-    componentDidMount() {
-        this._int = setInterval(() => {
-            this.props.loadServers();
-        }, 1e3);
-    }
-    componentWillUnmount() {
-        clearInterval(this._int);
-    }
-    componentWillUpdate(nextProps) {
-        if (nextProps.servers.length !== this.props.servers.length) {
-            return true;
-        }
-
-        const a = nextProps.servers.sort();
-        const b = this.props.servers.sort();
-
-        for (let i = 0; i < a.length; ++i) {
-            if (a[i] !== b[i]) {
-                return true;
-            }
-        }
-
-        return false;
-    }
     render() {
-        return (<ul className="list-group list-group-flush">
-                    {this.props.servers.map((server, idx) => {
-                        return <li key={idx} className="list-group-item">{server}</li>
-                    })}
-                </ul>);
+        return (<div><List {...this.props}/><Resolver {...this.props}/><Reverse {...this.props}/></div>);
     }
 }
 
