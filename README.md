@@ -14,5 +14,5 @@ npm start
 
 [build-image]:https://img.shields.io/badge/build%20with-panto-yellowgreen.svg
 [build-url]:https://github.com/pantojs/panto
-[travis-url]: https://travis-ci.org/pantojs/panto-transformer
-[travis-image]: http://img.shields.io/travis/pantojs/panto-transformer.svg
+[travis-url]: https://travis-ci.org/yanni4night/node-dns-window
+[travis-image]: http://img.shields.io/travis/yanni4night/node-dns-window.svg
